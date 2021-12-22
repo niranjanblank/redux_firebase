@@ -17,7 +17,7 @@ export const firebaseConfig = {
   appId: "1:775791956150:web:c1dffb227b15d065671617",
   measurementId: "G-3JZ5KWNDQQ"
 };
-console.log('env',process.env.apiKey_own)
+// console.log('env',process.env.apiKey_own)
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
