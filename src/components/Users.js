@@ -32,24 +32,30 @@ const Users = () => {
 
     return ( 
         <div>
-         <div className="App">
+         <div className="container p-4 d-flex flex-column justify-content-center">
+           <div>
             <input type="text" placeholder='Name' 
             onChange={(event)=>{setNewName(event.target.value)}}></input>
             <input type="number" placeholder='Age'
             onChange={(event)=>{setNewAge(event.target.value)}}
-            ></input>
-            <button onClick={createUser}>Create User</button>
-            {users.map((user)=> {
-                return (
-                <div key={user.id}>
-                    <h1>Name: {user.name}</h1>
-                    <h1>Age: {user.age}</h1>
-                    <button onClick={()=>{updateUser(user.id, user.age)}}> Increase Age</button>
-                    <button onClick={()=>deleteUser(user.id)}>Delete User</button>
-                </div>
-                )
-            })}
+            ></input><br/>
+            <button className="btn btn-success mt-2" onClick={createUser}>Create User</button>
             </div>
+            <hr/>
+            <div>
+              {users.map((user)=> {
+                  return (
+                  <div key={user.id} className=" m-2">
+                      <h1>Name: {user.name}</h1>
+                      <h1>Age: {user.age}</h1>
+                      <button className="btn btn-primary" onClick={()=>{updateUser(user.id, user.age)}}> Increase Age</button>
+                      <button className="btn btn-danger"onClick={()=>deleteUser(user.id)}>Delete User</button>
+                  </div>
+                  )
+              })}
+            </div>
+            </div>
+
         </div>
      );
 }
